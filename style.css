@@ -910,7 +910,8 @@ footer p:last-child {
   }
 
   .navbar .logo {
-    font-size: 1.2rem; /* Smaller logo size */
+    font-size: 1.1rem; /* Smaller logo size */
+    margin-left: -2%;
   }
 
   .navbar .nav-links {
@@ -1002,11 +1003,6 @@ footer p:last-child {
 
 /* General Styling for Smaller Screens */
 @media (max-width: 1024px) {
-  .hero {
-    flex-direction: column;
-    padding: 30px 5%;
-  }
-
   .hero-content {
     flex-direction: column;
     text-align: center;
@@ -1018,38 +1014,25 @@ footer p:last-child {
   }
 
   .hero-text p {
-    font-size: 1rem;
-    margin: 15px 0;
-  }
-
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 12px 15px;
+    font-size: 1.1rem;
   }
 
   .hero-image img {
-    width: 400px;
+    width: 200px;
+  }
+
+  .social-icons {
+    margin-left: 1%;
   }
 }
 
-/* Styling for Tablets and Small Devices */
 @media (max-width: 768px) {
-  .hero {
-    padding: 20px 5%;
-  }
-
   .hero-text h1 {
     font-size: 2rem;
   }
 
   .hero-text p {
-    font-size: 0.9rem;
-    margin: 10px 0;
-  }
-
-  .cta-button {
-    font-size: 0.8rem;
-    padding: 10px 12px;
+    font-size: 1rem;
   }
 
   .hero-image img {
@@ -1057,27 +1040,24 @@ footer p:last-child {
   }
 }
 
-/* Styling for Mobile Phones */
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 1.8rem;
   }
 
   .hero-text p {
-    font-size: 0.8rem;
-    margin: 8px 0;
-  }
-
-  .cta-button {
-    font-size: 0.7rem;
-    padding: 8px 10px;
+    font-size: 0.9rem;
   }
 
   .hero-image img {
-    width: 200px;
+    width: 230px;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   .timeline-item::before {
