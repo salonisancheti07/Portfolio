@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Saloni</div>
+      <nav>
+        <ul class="nav-links">
+        <li><a href="#Home" onclick="home()">Home</a></li>
+          <li><a href="#about"onclick='scrollToAbout()'>About</a></li>
+          <li><a href="#skills" onclick="skills()"  >Skills</a></li>
+          <li><a href="#projects" onclick="projects()" >Projects</a></li>
+          <li><a href="#contact" onclick="conatctme()">Contact </a></li>
+          <button class="theme-switcher" id="theme-switcher">
+            🌙
+          </button>  
+        </ul>                                     
+      </nav>
+
+    </div>
+  </header>
+  <section id="s" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/saloni-sancheti-b536832b5" target="_blank" class="icon linkedin">
+            <i class="fab fa-linkedin"></i> 
+          </a>
+          <a href="https://github.com/salonisancheti07" target="_blank" class="icon github">
+            <i class="fab fa-github"></i> 
+          </a>
+          <a href="#" target="_blank" class="icon html">
+            <i class="fab fa-html5"></i>
+          </a>
+        </div>
+        <h1>FULL STACK<br>DEVELOPER</h1>
+        <p>
+          I am saloni, experties in web design and development<br> passionate about creating beautiful and responsive websites.
+        </p>
+        <br>     
+        <a href="#portfolio" class="cta-button" onclick="conatctme()">Contact me <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <img src="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\WhatsApp Image 2025-01-23 at 13.54.08_b7131a43.jpg" alt="Developer Photo">
+      </div>
+    </div>
+  </section>
+  <div>
+    <section id="about" class="scroll-down-section">
+      <div class="scroll-down" onclick="scrollToAbout()">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span class="scroll-text">Scroll down</span>
+        <i class="arrow-down"></i>
+      </div>
+    </section>
+  </div>
+  
+  <section id="about" class="about-section">
+    <div class="sub-container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">My introduction</p>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\WhatsApp Image 2025-01-26 at 10.22.34_dd06b405.jpg" alt="Your Photo">
+        </div>
+        <div class="about-details">
+          <p class="about-description">
+            Enthusiastic web developer with hands-on<br>
+            experience in front-end and back-end tech-<br>
+            nologies like HTML, CSS, JavaScript, and <br>
+            MERN stack. Passionate about building res-<br>
+            ponsive,user-friendly web applications and<br>
+            eager to contribute fresh ideas."
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <h3>00+</h3>
+              <p>Years experience<br>(fresher)</p>
+            </div>
+            <div class="stat-item">
+              <h3>04+</h3>
+              <p>Completed <br> projects</p>
+            </div>
+            <div class="stat-item">
+              <h3>01+</h3>
+              <p>Companies worked<br>(Campus Ambassador.)</p>
+            </div>
+          </div>
+          <a href="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\resume.pdf" class="btn download-cv" target="_blank">
+            Download CV <i class="fas fa-download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="a" class="skills-section">
+    <h2>Skills</h2>
+    <p>My technical level</p>
+
+    <div class="skills-container">
+        <div class="skill-card">
+            <div class="skill-icon">{}</div>
+            <div class="skill-title">Frontend Developer</div>
+            <div class="skill-duration">HTML,CSS,JS,REACT JS</div>
+            <span class="arrow-saloni">&#9660;</span>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">&#128187;</div>
+            <div class="skill-title">Backend Developer</div>
+            <div class="skill-duration">Node JS,Express JS,Mongo DB</div>
+            <span class="arrow-saloni">&#9660;</span>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">&#9997;</div>
+            <div class="skill-title">Languages</div>
+            <div class="skill-duration">C++,C,Java,Python</div>
+            <span class="arrow-saloni">&#9660;</span>
+        </div>
+    </div>
+</section>
+<section class="qualification-section" id="qualification">
+  <h2 class="section-title">Qualification</h2>
+  <p class="section-subtitle">My personal journey</p>
+  <div class="qualification-tabs">
+    <button class="tab active" onclick="showEducation()"><i class="fas fa-graduation-cap"></i> Education</button>
+    <button class="tab" onclick="showWork()"> <i class="fas fa-briefcase"></i> Work</button>
+  </div>
+  <div class="qualification-content" id="education">
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>Primary Secondary School Certificate</h3>
+          <p>Bharat Madhymik School,Risod</p>
+          <span><i class="far fa-calendar-alt"></i> 2020 - 2021</span>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>Higher Secondary School Certificate</h3>
+          <p>Shri Renuka Mata English School,Gowardhan</p>
+          <span><i class="far fa-calendar-alt"></i> 2021 - 2023</span>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>Graduation Certificate</h3>
+          <p>Shri Guru Gobind Singh ji Institute of Engineering and Technology</p>
+          <span><i class="far fa-calendar-alt"></i> 2023 - 2027</span>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>web Development</h3>
+          <p>Online platform and some Youtube channels and documentation</p>
+          <span><i class="far fa-calendar-alt"></i> 2023 - 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="l" class="seju">
+  <div class="portfolio-section">
+    <h2>Projects</h2>
+    <p>Most recent work</p>
+    <div class="carousel">
+      <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#8592;</button>
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel-item">
+          <img src="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\Screenshot 2025-01-25 132914.png" class='salonisancheti07' alt="Project 1">
+          <div class="carousel-item-content">
+            <h3>FoodShare.com</h3>
+            <p>FoodShare.com is an innovative platform <br>
+              designed to connect food donors with those<br>
+              in need,minimizing food waste and fostering<br>
+              community support.The project features an <br>
+              intuitive interface for users to post and <br>
+              discover surplus food donations.It emphasi-<br>
+              zes sustainability and promotes resource <br>
+              sharing to combat hunger effectively.</p>
+            <a href="https://salonisancheti07.github.io/foodwaste.com/index.html" class="demo-button">Demo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\Screenshot 2025-01-25 222543.png" alt="Project 2">
+          <div class="carousel-item-content">
+            <h3>Algorithm Visualizer</h3>
+            <p>Algorithm Visualizer is an interactive web <br>
+              application that helps users understand and <br>
+              visualize various algorithms in action. It <br>
+              features dynamic animations, step-by-step <br>
+              execution, and explanations for algorithms <br>
+              like sorting, searching, and graph traversal.<br>
+              The tool is designed to simplify complex <br>
+              concepts for learners and enthusiasts. </p>
+            <a href="https://salonisancheti07.github.io/Algorithm-Visualizer/" class="demo-button">Demo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\Screenshot 2025-01-25 222733.png" alt="Project 3">
+          <div class="carousel-item-content">
+            <h3>ALumini Association</h3>
+            <p>Alumni Association is a dedicated platform to,<br>
+              connect alumni with their alma mater and<br>
+              fellow graduates. It facilitates networking,<br> 
+              event participation, and knowledge sharing <br>
+              among members. The project fosters strong <br>
+              community engagement and long-lasting <br>
+              professional relationships.</p>
+            <a href="https://salonisancheti07.github.io/Alumni-Association/" class="demo-button">Demo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="C:\Users\salon\OneDrive\Desktop\spotify\Portfolio\Screenshot 2025-01-25 224441.png" alt="Project 4">
+          <div class="carousel-item-content">
+            <h3>Mini-Spotify-Clone</h3>
+            <p>Mini Spotify Clone is a web application <br>
+              built using React.js, replicating key <br>
+              features like browsing and playing songs. <br>
+              It features a dynamic, responsive interface <br>
+              and highlights the use of React for creating <br>
+              interactive user experiences. The project <br>
+              demonstrates proficiency in modern front-end <br>
+              development.</p>
+            <a href="https://salonisancheti07.github.io/Spotify-Clone/" class="demo-button">Demo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#8594;</button>
+    </div>
+  </div>
+</section>
+<section id="mummy">
+  <div class="riya">
+    <h2>Contact</h2>
+    <p>Get in touch</p>
+<div class="contact-container">
+  <div class="contact-info">
+      <h3>Contact Me</h3>
+      <p><i class="fas fa-phone"></i>+9763478367<br> (WhatsApp)</p>
+      <p><i class="fas fa-envelope"></i> salonisancheti0707@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nanded, Maharashtra</p>
+  </div>
+  <form class="contact-form" onsubmit="submitForm(event)">
+      <input type="text" placeholder="Enter your Full Name"id="fullName" required>
+      <input type="email" placeholder="Enter your Email" id="email" required>
+      <input type="text" placeholder="Enter your Project Name" required>
+      <textarea placeholder="Enter your Message" id="message" required></textarea>
+      <button onclick="submitForm(event)">Send Message <i class="fas fa-paper-plane"></i></button>
+  </form>
+</div>
+</div>
+</section>
+<footer>
+  <div class="footer-container">
+    <h1>Saloni</h1>
+    <p>Full Stack developer</p>
+    <ul class="footer-links">
+      <li><a href="#skills" onclick="skills()">Skills</a></li>
+      <li><a href="#projects" onclick="projects()">Projects</a></li>
+      <li><a href="#contact" onclick="conatctme()">Contact</a></li>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/salonisancheti07/"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </ul>
+    <p class="footer-copy">&copy; CodeWithSaloni. All rights reserved</p>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
