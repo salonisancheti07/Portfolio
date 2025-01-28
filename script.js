@@ -125,19 +125,54 @@ let currentIndex = 0;
     
   
 
+    // async function submitForm(event) {
+    //   event.preventDefault(); // Prevent page reload
+      
+    //   // Get values from the form
+    //   const fullName = document.getElementById("fullName").value;
+    //   const email = document.getElementById("email").value;
+    //   const message = document.getElementById("message").value;
+    //   const project=document.getElementById("project").value;
+      
+    //   // Check if all fields are filled
+    //   if (!fullName || !email || !message || !project) {
+    //     alert("Please fill out all the fields.");
+    //     return; // Stop the form submission if any field is empty
+    //   }
+    
+    //   try {
+    //     const response = await fetch("http://localhost:5000/api/contact", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ fullName, email, message ,project}),
+    //     });
+    
+    //     if (response.ok) {
+    //       alert("Message sent successfully!");
+    //       document.querySelector(".contact-form").reset();
+    //     } else {
+    //       alert("Failed to send message. Please try again.");
+    //     }
+    //   } catch (error) {
+    //     console.error("Error submitting the form:", error);
+    //     alert("An error occurred. Please try again.");
+    //   }
+    // }
+    
     async function submitForm(event) {
       event.preventDefault(); // Prevent page reload
-      
-      // Get values from the form
-      const fullName = document.getElementById("fullName").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-      const project=document.getElementById("project").value;
-      
-      // Check if all fields are filled
-      if (!fullName || !email || !message || !project) {
-        alert("Please fill out all the fields.");
-        return; // Stop the form submission if any field is empty
+    
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const projectName = document.querySelector("input[placeholder='Enter your Project Name']").value.trim();
+      const message = document.getElementById("message").value.trim();
+    
+      // Ensure all fields are filled
+      if (!fullName || !email || !projectName || !message) {
+        alert("All fields are required!");
+        return;
       }
     
       try {
@@ -146,7 +181,7 @@ let currentIndex = 0;
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ fullName, email, message ,project}),
+          body: JSON.stringify({ fullName, email, projectName, message }),
         });
     
         if (response.ok) {
@@ -160,5 +195,4 @@ let currentIndex = 0;
         alert("An error occurred. Please try again.");
       }
     }
-    
     
