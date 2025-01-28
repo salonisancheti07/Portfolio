@@ -70,30 +70,95 @@ let currentIndex = 0;
        }
     }
 
-    function submitForm(event) {
-      event.preventDefault(); // Prevent default form submission
+    // function submitForm(event) {
+    //   event.preventDefault(); // Prevent default form submission
       
-      const form = document.querySelector('.contact-form'); // Select the form
-      const inputs = form.querySelectorAll('input, textarea'); // Get all input fields
-      let allFilled = true;
+    //   const form = document.querySelector('.contact-form'); // Select the form
+    //   const inputs = form.querySelectorAll('input, textarea'); // Get all input fields
+    //   let allFilled = true;
     
-      // Validate each input field
-      inputs.forEach(input => {
-        if (!input.value.trim()) { // Check if the input is empty or only whitespace
-          allFilled = false;
-          input.style.borderColor = "red"; // Highlight empty inputs
+    //   // Validate each input field
+    //   inputs.forEach(input => {
+    //     if (!input.value.trim()) { // Check if the input is empty or only whitespace
+    //       allFilled = false;
+    //       input.style.borderColor = "red"; // Highlight empty inputs
+    //     } else {
+    //       input.style.borderColor = "initial"; // Reset border color for filled inputs
+    //     }
+    //   });
+    
+    //   if (allFilled) {
+    //     alert("Your message has been sent!"); // Show success message
+    //     form.reset(); // Clear the form fields for a new submission
+    //   } else {
+    //     alert("Please fill all the required fields."); // Show error message
+    //   }
+    // }
+    
+    // async function submitForm(event) {
+    //   event.preventDefault(); // Prevent page reload
+    
+    //   const fullName = document.getElementById("fullName").value;
+    //   const email = document.getElementById("email").value;
+    //   const message = document.getElementById("message").value;
+    
+    //   try {
+    //     const response = await fetch("http://localhost:5000/api/contact", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ fullName, email, message }),
+    //     });
+    
+    //     if (response.ok) {
+    //       alert("Message sent successfully!");
+    //       document.querySelector(".contact-form").reset();
+    //     } else {
+    //       alert("Failed to send message. Please try again.");
+    //     }
+    //   } catch (error) {
+    //     console.error("Error submitting the form:", error);
+    //     alert("An error occurred. Please try again.");
+    //   }
+    // }
+    
+  
+
+    async function submitForm(event) {
+      event.preventDefault(); // Prevent page reload
+      
+      // Get values from the form
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const project=document.getElementById("project").value;
+      
+      // Check if all fields are filled
+      if (!fullName || !email || !message || !project) {
+        alert("Please fill out all the fields.");
+        return; // Stop the form submission if any field is empty
+      }
+    
+      try {
+        const response = await fetch("http://localhost:5000/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ fullName, email, message ,project}),
+        });
+    
+        if (response.ok) {
+          alert("Message sent successfully!");
+          document.querySelector(".contact-form").reset();
         } else {
-          input.style.borderColor = "initial"; // Reset border color for filled inputs
+          alert("Failed to send message. Please try again.");
         }
-      });
-    
-      if (allFilled) {
-        alert("Your message has been sent!"); // Show success message
-        form.reset(); // Clear the form fields for a new submission
-      } else {
-        alert("Please fill all the required fields."); // Show error message
+      } catch (error) {
+        console.error("Error submitting the form:", error);
+        alert("An error occurred. Please try again.");
       }
     }
     
-
     
