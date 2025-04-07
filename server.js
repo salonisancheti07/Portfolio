@@ -10,12 +10,11 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Connection
-const MONGO_URI = "mongodb+srv://sbhau139:Saloni070705@cluster0.nq7z9.mongodb.net/contactDB?retryWrites=true&w=majority&appName=Cluster0";
+// MongoDB Connection (Local)
 mongoose
-  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connected successfully"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .connect("mongodb://127.0.0.1:27017/contactDB")
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Mongoose Schema
 const contactSchema = new mongoose.Schema({
@@ -27,11 +26,15 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model("Contact", contactSchema);
 
-// API Endpoint
+// ✅ Root route (for browser access)
+app.get("/", (req, res) => {
+  res.send("🚀 Welcome to Saloni's Portfolio Backend!");
+});
+
+// ✅ POST route: Submit contact form
 app.post("/api/contact", async (req, res) => {
   const { fullName, email, projectName, message } = req.body;
 
-  // Validation
   if (!fullName || !email || !projectName || !message) {
     return res.status(400).json({ error: "All fields are required" });
   }
@@ -46,5 +49,17 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+// ✅ GET route: View all submissions (admin-like view)
+app.get("/api/contact", async (req, res) => {
+  try {
+    const contacts = await Contact.find();
+    res.status(200).json(contacts);
+  } catch (error) {
+    console.error("Error fetching contacts:", error);
+    res.status(500).json({ error: "Failed to fetch contact form submissions" });
+  }
+});
+
 // Start Server
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+//for finding all submission go into http://localhost:5000/api/contact
