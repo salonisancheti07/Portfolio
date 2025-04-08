@@ -239,3 +239,11 @@ async function submitForm(event) {
 
 // Attach the submit event handler to the form
 document.querySelector(".contact-form").addEventListener("submit", submitForm);
+
+const email = document.getElementById("email").value.trim();
+
+if (!email || !isValidEmail(email)) {
+  alert("Please enter a valid email address.");
+  return;
+}
+
