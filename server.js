@@ -10,11 +10,13 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Connection (Local)
+const MONGO_URI =
+"mongodb+srv://saloni:Saloni070705@portfolio.zwi1p2w.mongodb.net/?retryWrites=true&w=majority&appName=portfolio";
+
 mongoose
-  .connect("mongodb://127.0.0.1:27017/contactDB")
-  .then(() => console.log("✅ MongoDB connected successfully"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+.connect(MONGO_URI)
+.then(() => console.log("✅ MongoDB connected successfully"))
+.catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Mongoose Schema
 const contactSchema = new mongoose.Schema({
@@ -62,4 +64,3 @@ app.get("/api/contact", async (req, res) => {
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-//for finding all submission go into http://localhost:5000/api/contact

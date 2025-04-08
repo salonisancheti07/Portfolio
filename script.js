@@ -196,3 +196,34 @@ let currentIndex = 0;
       }
     }
     
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+    
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const projectName = document.getElementById("projectName").value;
+      const message = document.getElementById("message").value;
+    
+      fetch("https://portfolio-2jq6.onrender.com/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          projectName,
+          message,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          alert("Message sent successfully!");
+          form.reset(); // optional: clear the form
+        })
+        .catch((err) => {
+          console.error("Error:", err);
+          alert("Failed to send message.");
+        });
+    });
+    
