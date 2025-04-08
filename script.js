@@ -238,12 +238,22 @@ async function submitForm(event) {
 }
 
 // Attach the submit event handler to the form
-document.querySelector(".contact-form").addEventListener("submit", submitForm);
 
-const email = document.getElementById("email").value.trim();
+  const form = document.getElementById('contact-form');
+  const emailInput = document.getElementById('email');
+  const errorMsg = document.getElementById('email-error');
 
-if (!email || !isValidEmail(email)) {
-  alert("Please enter a valid email address.");
-  return;
-}
+  form.addEventListener('submit', function (e) {
+    const email = emailInput.value;
+    const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (!email.match(pattern)) {
+      e.preventDefault();
+      errorMsg.style.display = 'block';
+    } else {
+      errorMsg.style.display = 'none';
+    }
+  });
+
+
 
